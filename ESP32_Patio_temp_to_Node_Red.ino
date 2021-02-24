@@ -45,11 +45,11 @@
 //*****+*+*+*+*+*+*+*+*+*+**************************************************+*+*+*+*+*+*+*+*+*+*****
 //*****+*+*+*+*+*+*+*+*+*+*****************Things to modify*****************+*+*+*+*+*+*+*+*+*+*****
 //*****+*+*+*+*+*+*+*+*+*+**************************************************+*+*+*+*+*+*+*+*+*+*****
-const char* ssid = "NETGEAR15";//**********WiFi SSID**********
-const char* password =  "gentlewind328";//**********SSID Password**********
-const char* mqttUser = "username";
-const char* mqttPassword = "12345678";
-const char* mqtt_server = "192.168.0.45";
+const char* ssid = "{Your network SSID goes between the quotes}";//**********WiFi SSID**********
+const char* password =  "{Your network password goes between the quotes}";//**********SSID Password**********
+const char* mqttUser = "{Your MQTT username goes between the quotes}";
+const char* mqttPassword = "{Your MQTT password goes between the quotes}";
+const char* mqtt_server = "{Your MQTT server IP Address goes between the quotes}";
 const int mqttPort = 1883;
 
 //******************************Unique Setting for each board**************************************
@@ -60,9 +60,9 @@ const char* topicPrefix = "apt/patio";//This is specifically for apt/room or are
 const char* topicRoom = "patio";
 //int delayTime = 4901;//This is adjusted so a cycle happens every 5 seconds(5000 ms)
 int delayTime = 56156;//This is adjusted so a cycle happens every 60 seconds(60000 ms)
-IPAddress local_IP(192,168,0,53);//The IP Address assigned to this ESP32
-IPAddress gateway(192,168,0,1);
-IPAddress subnet(255,255,255,0);
+PAddress local_IP({The IP Address of the ESP32 goes between the parenthesis});
+IPAddress gateway({The IP Address of your gateway goes between the parenthesis(Comma seperated)});
+IPAddress subnet({The IP Address of your subnet goes between the parenthesis(Comma seperated)});
 //*****+*+*+*+*+*+*+*+*+*+**************************************************+*+*+*+*+*+*+*+*+*+*****
 //*****+*+*+*+*+*+*+*+*+*+*************End of things to modify**************+*+*+*+*+*+*+*+*+*+*****
 //*****+*+*+*+*+*+*+*+*+*+**************************************************+*+*+*+*+*+*+*+*+*+*****
