@@ -4,6 +4,7 @@
  * the serial monitor and an MQTT server using specific topics. In this case the MQTT server is setup
  * on a raspberry pi or Linux PC. 
  * 
+ * !!!The below parts and wiring is not for a Sparkfun ESP23 Thing and pni numbers need to be updated!!!
  * Parts needed for this program:
  * -Esp Dev Module
  * -DHT Temp and Hum Sensor
