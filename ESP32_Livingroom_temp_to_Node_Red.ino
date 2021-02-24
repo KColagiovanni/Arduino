@@ -5,8 +5,8 @@
  * on a raspberry pi or Linux PC. 
  * 
  * Parts needed for this program:
- * -Esp Dev Module
- * -DHT Temp and Hum Sensor
+ * -Esp32 Dev Module (https://www.amazon.com/gp/product/B07Q576VWZ/ref=ppx_yo_dt_b_asin_title_o06_s01?ie=UTF8&psc=1)
+ * -DHT11 or DHT22 Temp and Hum Sensor
  * -7-12VDC to 3.3/5V power supply with both jumpers set to "3.3V"
  * -1k Ohm Resistor(Brown/Black/Red)
  * -Yellow LED
@@ -34,6 +34,7 @@
 #include "time.h"
 
 #define DHTPIN 19// Pin which is connected to the DHT22 sensor.
+//#define DHTTYPE DHT11//DHT 11 Sensor
 #define DHTTYPE DHT22// DHT 22 (AM2302)
 
 //*****+*+*+*+*+*+*+*+*+*+**************************************************+*+*+*+*+*+*+*+*+*+*****
@@ -43,7 +44,7 @@ const char* ssid = "{Your network SSID goes between the quotes}";//**********WiF
 const char* password =  "{Your network password goes between the quotes}";//**********SSID Password**********
 const char* mqttUser = "{Your MQTT username goes between the quotes}";
 const char* mqttPassword = "{Your MQTT password goes between the quotes}";
-const char* mqtt_server = "192.168.0.55";//RP5180
+const char* mqtt_server = "{Your MQTT server IP Address goes between the quotes}";
 const int mqttPort = 1883;
 const char* mqttClientID = "ESP32ClientLivingroom";
 WiFiClient espClientLiv;//**********This is the name of the specific ESP32**********
@@ -52,9 +53,9 @@ const char* topicPrefix = "apt/livingroom";//This is specifically for apt/room o
 const char* topicRoom = "livingroom";
 //int delayTime = 4901;//This is adjusted so a cycle happens every 5 seconds(5000 ms)
 int delayTime = 59901;//This is adjusted so a cycle happens every 60 seconds(60000 ms)
-IPAddress local_IP(192,168,0,50);
-IPAddress gateway(192,168,0,1);
-IPAddress subnet(255,255,255,0);
+IPAddress local_IP({The IP Address of the ESP32 goes between the parenthesis});
+IPAddress gateway({The IP Address of your gateway goes between the parenthesis(Comma seperated)});
+IPAddress subnet({The IP Address of your subnet goes between the parenthesis(Comma seperated)});
 IPAddress dns1(75,75,75,75);//dns1 and dns2 are needed to get local time
 IPAddress dns2(75,75,76,76);//dns1 and dns2 are needed to get local time
 //*****+*+*+*+*+*+*+*+*+*+**************************************************+*+*+*+*+*+*+*+*+*+*****
