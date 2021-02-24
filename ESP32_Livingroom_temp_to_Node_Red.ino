@@ -39,12 +39,10 @@
 //*****+*+*+*+*+*+*+*+*+*+**************************************************+*+*+*+*+*+*+*+*+*+*****
 //*****+*+*+*+*+*+*+*+*+*+*****************Things to modify*****************+*+*+*+*+*+*+*+*+*+*****
 //*****+*+*+*+*+*+*+*+*+*+**************************************************+*+*+*+*+*+*+*+*+*+*****
-const char* ssid = "NETGEAR15";//**********WiFi SSID**********
-const char* password =  "gentlewind328";//**********SSID Password**********
-const char* mqttUser = "username";
-const char* mqttPassword = "12345678";
-//const char* mqtt_server = "192.168.0.45";//Raspberry Pi 
-//const char* mqtt_server = "192.168.0.48";//ZBox
+const char* ssid = "{Your network SSID goes between the quotes}";//**********WiFi SSID**********
+const char* password =  "{Your network password goes between the quotes}";//**********SSID Password**********
+const char* mqttUser = "{Your MQTT username goes between the quotes}";
+const char* mqttPassword = "{Your MQTT password goes between the quotes}";
 const char* mqtt_server = "192.168.0.55";//RP5180
 const int mqttPort = 1883;
 const char* mqttClientID = "ESP32ClientLivingroom";
