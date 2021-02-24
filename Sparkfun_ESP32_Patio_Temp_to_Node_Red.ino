@@ -1,11 +1,11 @@
 /******************************************************************************************************
- * This program was written with the intent to measure temperature and humidity using an Espresif ESP32,
- * a DHT Temperature and Humidity sensor, and a power supply set to 3.3V. The program sends data to
- * the serial monitor and an MQTT server using specific topics. In this case the MQTT server is setup
+ * This program was written with the intent to measure temperature and humidity using an Sparkfun ESP32
+ * Thing, a DHT Temperature and Humidity sensor, and a power supply set to 3.3V. The program sends data
+ * to the serial monitor and an MQTT server using specific topics. In this case the MQTT server is setup
  * on a raspberry pi or Linux PC. 
  * 
  * Parts needed for this program:
- * -Esp Dev Module
+ * -Sparkfun ESP32 Thing(https://www.amazon.com/gp/product/B01MG9BNEN/ref=ppx_yo_dt_b_asin_title_o05_s04?ie=UTF8&psc=1)
  * -DHT Temp and Hum Sensor
  * -7-12VDC to 3.3/5V power supply with both jumpers set to "3.3V"
  * -1k Ohm Resistor(Brown/Black/Red)
@@ -46,13 +46,11 @@
 //*****+*+*+*+*+*+*+*+*+*+**************************************************+*+*+*+*+*+*+*+*+*+*****
 //*****+*+*+*+*+*+*+*+*+*+*****************Things to modify*****************+*+*+*+*+*+*+*+*+*+*****
 //*****+*+*+*+*+*+*+*+*+*+**************************************************+*+*+*+*+*+*+*+*+*+*****
-const char* ssid = "NETGEAR15";//**********WiFi SSID**********
-const char* password =  "gentlewind328";//**********SSID Password**********
-const char* mqttUser = "username";
-const char* mqttPassword = "12345678";
-//const char* mqtt_server = "192.168.0.45";//Raspberry Pi
-//const char* mqtt_server = "192.168.0.48";//ZBox
-const char* mqtt_server = "192.168.0.55";//RP5180
+const char* ssid = "{Your network SSID goes between the quotes}";//**********WiFi SSID**********
+const char* password =  "{Your network password goes between the quotes}";//**********SSID Password**********
+const char* mqttUser = "{Your MQTT username goes between the quotes}";
+const char* mqttPassword = "{Your MQTT password goes between the quotes}";
+const char* mqtt_server = "{Your MQTT server IP Address goes between the quotes}";
 const int mqttPort = 1883;
 
 //******************************Unique Setting for each board**************************************
@@ -62,9 +60,9 @@ PubSubClient client(espClientPatio);//**********This is the name of the specific
 const char* topicPrefix = "apt/patio";//This is specifically for apt/room or area name/xxxxx
 const char* topicRoom = "patio";
 int delayTime = 59901;//This is adjusted so a cycle happens every 60 seconds(60000 ms)
-IPAddress local_IP(192,168,0,70);//The IP Address assigned to this ESP32
-IPAddress gateway(192,168,0,1);
-IPAddress subnet(255,255,255,0);
+IPAddress local_IP({The IP Address of the ESP32 goes between the parenthesis});
+IPAddress gateway({The IP Address of your gateway goes between the parenthesis(Comma seperated)});
+IPAddress subnet({The IP Address of your subnet goes between the parenthesis(Comma seperated)});
 IPAddress dns1(75,75,75,75);//dns1 and dns2 are needed to get local time
 IPAddress dns2(75,75,76,76);//dns1 and dns2 are needed to get local time
 //*****+*+*+*+*+*+*+*+*+*+**************************************************+*+*+*+*+*+*+*+*+*+*****
