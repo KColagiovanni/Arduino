@@ -50,10 +50,10 @@ const char* password =  "<SSID Password>";//**********SSID Password**********
 const char* mqttUser = "<MQTT username>";
 const char* mqttPassword = "<MQTT Password>";
 const char* mqtt_server = "<MQTT Server IP>";
-const int mqttPort = <MQTT Port #>;
+const int mqttPort = 1883;
 
 //******************************Unique Setting for each board**************************************
-const char* mqttClientID = "<MQTT CLient ID>";
+const char* mqttClientID = "";
 WiFiClient espClientPatio;//**********This is the name of the specific ESP32**********
 PubSubClient client(espClientPatio);//**********This is the name of the specific ESP32**********
 const char* topicPrefix = "apt/patio";//This is specifically for apt/room or area name/xxxxx
