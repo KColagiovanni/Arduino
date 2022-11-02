@@ -1,10 +1,10 @@
 /******************************************************************************************************
- * This program was written with the intent to measure temperature and humidity using an Espresif ESP32,
- * a DHT Temperature and Humidity sensor, and a power supply set to 3.3V. The program sends data to
+ * This program was written with the intent to measure temperature and humidity using a Sparkfun ESP32,
+ * a DHT22 Temperature and Humidity sensor, and a power supply set to 3.3V. The program sends data to
  * the serial monitor and an MQTT server using specific topics. In this case the MQTT server is setup
  * on a raspberry pi or Linux PC. 
  * 
- * !!!The below parts and wiring is not for a Sparkfun ESP23 Thing and pni numbers need to be updated!!!
+ * !!!The below parts and wiring is not for a Sparkfun ESP32 Thing and pin numbers need to be updated!!!
  * Parts needed for this program:
  * -Esp Dev Module
  * -DHT Temp and Hum Sensor
@@ -45,17 +45,15 @@
 //*****+*+*+*+*+*+*+*+*+*+**************************************************+*+*+*+*+*+*+*+*+*+*****
 //*****+*+*+*+*+*+*+*+*+*+*****************Things to modify*****************+*+*+*+*+*+*+*+*+*+*****
 //*****+*+*+*+*+*+*+*+*+*+**************************************************+*+*+*+*+*+*+*+*+*+*****
-const char* ssid = "NETGEAR15";//**********WiFi SSID**********
-const char* password =  "gentlewind328";//**********SSID Password**********
-const char* mqttUser = "username";
-const char* mqttPassword = "12345678";
-//const char* mqtt_server = "192.168.0.45";//Raspberry Pi
-//const char* mqtt_server = "192.168.0.48";//ZBox
-const char* mqtt_server = "192.168.0.55";//RP5180
-const int mqttPort = 1883;
+const char* ssid = "<SSID>";//**********WiFi SSID**********
+const char* password =  "<SSID Password>";//**********SSID Password**********
+const char* mqttUser = "<MQTT username>";
+const char* mqttPassword = "<MQTT Password>";
+const char* mqtt_server = "<MQTT Server IP>";
+const int mqttPort = <MQTT Port #>;
 
 //******************************Unique Setting for each board**************************************
-const char* mqttClientID = "ESP32ClientPatio";
+const char* mqttClientID = "<MQTT CLient ID>";
 WiFiClient espClientPatio;//**********This is the name of the specific ESP32**********
 PubSubClient client(espClientPatio);//**********This is the name of the specific ESP32**********
 const char* topicPrefix = "apt/patio";//This is specifically for apt/room or area name/xxxxx
@@ -74,7 +72,7 @@ IPAddress dns2(75,75,76,76);//dns1 and dns2 are needed to get local time
 //**********Declaring Variables**********
 int d, mo, y, wifiConnected, mqttConnected, resetHour, resetMin;
 int WiFiLed = 5;//**********Pin 5 is the on board blue LED**********
-//int mqttLed = 5;//**********This is the pin that the LED is connected to()**********
+//int mqttLed = 5;//**********This is the pin that the LED is connected to**********
 int photoresistorPin = 36;
 int wifiDisconnected = -1;
 int mqttDisconnected = -1;
