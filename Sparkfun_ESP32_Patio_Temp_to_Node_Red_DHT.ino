@@ -22,9 +22,11 @@
  * Power supply pressed into (+) and (-) on both sides, rows 1-5
  * Long side of the LED pressed into b13
  * Short side of the LED pressed into b10
- * One side of the photoresistor pressed into a6 and the other pressed into (+)(Use a 1k Ohm resistor with the photoresistor when used in direct sunlight, a 4.7k Ohm can be used when inside)
+ * One side of the photoresistor pressed into a6 and the other pressed into (+)
+ *      (Use a 1k Ohm resistor with the photoresistor when used in direct sunlight, a 4.7k Ohm can be used when inside)
  * One side of the resistor pressed into b6 and the other side pressed into (-)
- * Jumper wire from e6 to e19(Pin D34 on the ESP32)(Wire must be put into e19 and bent 90*, then the EWSP32 goes on top of it)
+ * Jumper wire from e6 to e19(Pin D34 on the ESP32)
+ *      (Wire must be put into e19 and bent 90*, then the EWSP32 goes on top of it)
  * One side of the resistor pressed into a10 and the other side pressed into (-)
  * Jumper wire from (+) to j30(Pin 3V3 on the ESP32)
  * Jumper wire from (-) to j29(Pin GND on the ESP32)
@@ -53,7 +55,7 @@ const char* mqtt_server = "<MQTT Server IP>";
 const int mqttPort = 1883;
 
 //******************************Unique Setting for each board**************************************
-const char* mqttClientID = "";
+const char* mqttClientID = "ESP32ClientPatio";
 WiFiClient espClientPatio;//**********This is the name of the specific ESP32**********
 PubSubClient client(espClientPatio);//**********This is the name of the specific ESP32**********
 const char* topicPrefix = "apt/patio";//This is specifically for apt/room or area name/xxxxx
